@@ -69,6 +69,9 @@ extension SearchViewController: UITableViewDelegate, UIScrollViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        imageListViewModel.showPopUp(vc: self, row: indexPath.row)
+    }
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         if ((imageListTableView.contentOffset.y + imageListTableView.frame.size.height + 6) >= imageListTableView.contentSize.height)
         {

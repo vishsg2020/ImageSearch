@@ -15,7 +15,7 @@ class SearchService:  NSObject {
     
     func fetchImageList(urlParamString: String, completion : @escaping (ImageListModel?) -> ()) {
         let sImageSearchAPIURLString = "api/Search/ImageSearchAPI?"
-        get(requestString: baseURLString+sImageSearchAPIURLString+urlParamString) { (imageList) in
+        get(requestString: (baseURLString+sImageSearchAPIURLString+urlParamString).removeSpace()) { (imageList) in
             completion(imageList)
         }
     }

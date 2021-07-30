@@ -8,6 +8,35 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Image Popup View Controller-->
+        <scene sceneID="6ix-ow-TsL">
+            <objects>
+                <viewController storyboardIdentifier="ImagePopupViewController" id="0E3-EK-o8N" customClass="ImagePopupViewController" customModule="ImageSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ifB-Kv-a4j">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JXV-Tk-1qx">
+                                <rect key="frame" x="10" y="54" width="394" height="798"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="CwD-uH-LZi"/>
+                        <color key="backgroundColor" systemColor="secondaryLabelColor"/>
+                        <constraints>
+                            <constraint firstItem="JXV-Tk-1qx" firstAttribute="top" secondItem="CwD-uH-LZi" secondAttribute="top" constant="10" id="KCG-CF-Tkz"/>
+                            <constraint firstItem="CwD-uH-LZi" firstAttribute="bottom" secondItem="JXV-Tk-1qx" secondAttribute="bottom" constant="10" id="bFG-CM-xVE"/>
+                            <constraint firstItem="CwD-uH-LZi" firstAttribute="trailing" secondItem="JXV-Tk-1qx" secondAttribute="trailing" constant="10" id="w5y-no-CQ4"/>
+                            <constraint firstItem="JXV-Tk-1qx" firstAttribute="leading" secondItem="CwD-uH-LZi" secondAttribute="leading" constant="10" id="ypn-6o-Gcc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="JXV-Tk-1qx" id="oxS-8t-gU5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jQi-Yg-VVq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-898" y="990"/>
+        </scene>
         <!--Search View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -16,8 +45,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <searchBar contentMode="redraw" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="T8s-Ut-6rr">
+                                <rect key="frame" x="0.0" y="44" width="414" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="48G-RS-lst"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="E9R-Fa-GGD"/>
+                                </connections>
+                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hEU-XP-qGO">
-                                <rect key="frame" x="0.0" y="124" width="414" height="738"/>
+                                <rect key="frame" x="0.0" y="102" width="414" height="760"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ImageListCell" id="BTA-yi-3wu" customClass="ImageListCell" customModule="ImageSearch" customModuleProvider="target">
@@ -57,20 +100,6 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <searchBar contentMode="redraw" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="T8s-Ut-6rr">
-                                <rect key="frame" x="0.0" y="44" width="414" height="56"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="56" id="48G-RS-lst"/>
-                                </constraints>
-                                <textInputTraits key="textInputTraits"/>
-                                <scopeButtonTitles>
-                                    <string>Title</string>
-                                    <string>Title</string>
-                                </scopeButtonTitles>
-                                <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="E9R-Fa-GGD"/>
-                                </connections>
-                            </searchBar>
                             <label hidden="YES" opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading.." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pGB-qJ-vQA">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" red="0.87513289859999999" green="0.97762948839999997" blue="1" alpha="0.46723701579999999" colorSpace="custom" customColorSpace="sRGB"/>
@@ -104,8 +133,8 @@
                             <constraint firstItem="pGB-qJ-vQA" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Wph-Pf-nmj"/>
                             <constraint firstAttribute="bottom" secondItem="pGB-qJ-vQA" secondAttribute="bottom" id="dCH-4K-0a5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hEU-XP-qGO" secondAttribute="bottom" id="eYL-9K-4DB"/>
-                            <constraint firstItem="hEU-XP-qGO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="k07-Sd-S2X"/>
                             <constraint firstItem="T8s-Ut-6rr" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="qKw-3U-UtO"/>
+                            <constraint firstItem="hEU-XP-qGO" firstAttribute="top" secondItem="T8s-Ut-6rr" secondAttribute="bottom" constant="2" id="wk5-87-EDF"/>
                         </constraints>
                     </view>
                     <connections>

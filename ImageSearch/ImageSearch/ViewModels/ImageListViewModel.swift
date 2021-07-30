@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 class ImageListViewModel : NSObject {
     
     private var currentPage: Int = 0
@@ -28,7 +29,14 @@ class ImageListViewModel : NSObject {
         super.init()
         self.apiService =  SearchService()
     }
-    
+    func showPopUp(vc: UIViewController, row: Int) {
+        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let popupVC = storyboard.instantiateViewController(withIdentifier: "ImagePopupViewController") as! ImagePopupViewController
+        popupVC.modalPresentationStyle = .popover
+        popupVC.modalTransitionStyle = .coverVertical
+        popupVC.imageUrl = imageListData.value[row].imageUrl
+        vc.present(popupVC, animated: true, completion: nil)
+    }
     func fetchMore() {
         self.showLoadMore()
         fetchImages(nil)

@@ -15,6 +15,13 @@ class ImageListCell: UITableViewCell {
         didSet {
             imageTitle.text = item?.imageTitle
             imageThumbnail.image = UIImage(named: "placeHolderImage")
+            if let url = item?.thumbImageUrl {
+                ImageDownloadManger.shared.downloadImage(url) { [weak self] (thumbImage) in
+                    DispatchQueue.main.async {
+                    self?.imageThumbnail.image = thumbImage
+                    }
+                }
+            }
         }
     }
     

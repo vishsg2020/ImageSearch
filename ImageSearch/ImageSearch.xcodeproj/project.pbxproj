@@ -24,6 +24,8 @@
 		89E88F1C26B31EDC002593ED /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E88F1B26B31EDC002593ED /* SearchService.swift */; };
 		89E88F2126B31FB4002593ED /* ImageListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E88F2026B31FB4002593ED /* ImageListCell.swift */; };
 		89E88F2626B31FFF002593ED /* ImageListTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E88F2526B31FFF002593ED /* ImageListTableViewDataSource.swift */; };
+		89E88F2B26B32130002593ED /* ImageDownloadManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E88F2A26B32130002593ED /* ImageDownloadManger.swift */; };
+		89E88F3026B32421002593ED /* ImagePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E88F2F26B32421002593ED /* ImagePopupViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		89E88F1B26B31EDC002593ED /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
 		89E88F2026B31FB4002593ED /* ImageListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListCell.swift; sourceTree = "<group>"; };
 		89E88F2526B31FFF002593ED /* ImageListTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListTableViewDataSource.swift; sourceTree = "<group>"; };
+		89E88F2A26B32130002593ED /* ImageDownloadManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloadManger.swift; sourceTree = "<group>"; };
+		89E88F2F26B32421002593ED /* ImagePopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePopupViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				89E88EF726B31C90002593ED /* SearchViewController.swift */,
+				89E88F2F26B32421002593ED /* ImagePopupViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -207,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				89E88F1626B31EA5002593ED /* Extensions.swift */,
+				89E88F2A26B32130002593ED /* ImageDownloadManger.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -349,8 +355,10 @@
 				89E88F1226B31E89002593ED /* SearchRequestParam.swift in Sources */,
 				89E88EBB26B2EE66002593ED /* AppDelegate.swift in Sources */,
 				89E88F0826B31CE6002593ED /* ImageListModel.swift in Sources */,
+				89E88F2B26B32130002593ED /* ImageDownloadManger.swift in Sources */,
 				89E88F1C26B31EDC002593ED /* SearchService.swift in Sources */,
 				89E88EFB26B31C90002593ED /* SearchViewController.swift in Sources */,
+				89E88F3026B32421002593ED /* ImagePopupViewController.swift in Sources */,
 				89E88F2626B31FFF002593ED /* ImageListTableViewDataSource.swift in Sources */,
 				89E88EBD26B2EE66002593ED /* SceneDelegate.swift in Sources */,
 			);

@@ -13,3 +13,11 @@ extension Bool {
         else { return "false" }
     }
 }
+extension String {
+    func fileName() -> String {
+        return self.replacingOccurrences(of: ":", with: "").replacingOccurrences(of: "/", with: "")
+    }
+    func removeSpace() -> String {
+        return self.replacingOccurrences(of: " ", with: "")
+    }
+}
